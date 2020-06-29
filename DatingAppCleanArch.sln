@@ -7,19 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{C18F7C68-301
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{D1C64C9C-40F4-4D47-A0D3-BB51D47AEEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingAppCleanArch.API", "DatingAppCleanArch.API\DatingAppCleanArch.API.csproj", "{1635DA32-2388-49F9-91EF-510DAB74C2D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingAppCleanArch.API", "DatingAppCleanArch.API\DatingAppCleanArch.API.csproj", "{1635DA32-2388-49F9-91EF-510DAB74C2D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{82758AEB-9469-4EFD-B561-483821B8F76A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingAppCleanArch.Domain", "DatingAppCleanArch.Domain\DatingAppCleanArch.Domain.csproj", "{751C1E37-278E-479C-AFF7-59C90D829D2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingAppCleanArch.Domain", "DatingAppCleanArch.Domain\DatingAppCleanArch.Domain.csproj", "{751C1E37-278E-479C-AFF7-59C90D829D2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{564C5695-B85A-4C4E-9652-B31F48B58988}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingAppCleanArch.Persistence", "DatingAppCleanArch.Persistence\DatingAppCleanArch.Persistence.csproj", "{A340333F-FFE7-4881-95F1-E8AC153F6920}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingAppCleanArch.Persistence", "DatingAppCleanArch.Persistence\DatingAppCleanArch.Persistence.csproj", "{A340333F-FFE7-4881-95F1-E8AC153F6920}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{755FC084-E002-4077-A6BC-034E2E241C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingAppCleanArch.Application", "DatingAppCleanArch.Application\DatingAppCleanArch.Application.csproj", "{794B5A49-2FC3-4594-B50F-6B4C34F4B10A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingAppCleanArch.Application", "DatingAppCleanArch.Application\DatingAppCleanArch.Application.csproj", "{794B5A49-2FC3-4594-B50F-6B4C34F4B10A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ioc", "Ioc", "{02BB5143-6B67-4CE4-8E89-810D51B61958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingAppCleanArch.Ioc", "DatingAppCleanArch.Ioc\DatingAppCleanArch.Ioc.csproj", "{84C8CC13-FCE8-484A-974B-24759C945B30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{794B5A49-2FC3-4594-B50F-6B4C34F4B10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{794B5A49-2FC3-4594-B50F-6B4C34F4B10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{794B5A49-2FC3-4594-B50F-6B4C34F4B10A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C8CC13-FCE8-484A-974B-24759C945B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C8CC13-FCE8-484A-974B-24759C945B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C8CC13-FCE8-484A-974B-24759C945B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C8CC13-FCE8-484A-974B-24759C945B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +64,8 @@ Global
 		{A340333F-FFE7-4881-95F1-E8AC153F6920} = {564C5695-B85A-4C4E-9652-B31F48B58988}
 		{755FC084-E002-4077-A6BC-034E2E241C36} = {C18F7C68-3013-4BDB-941F-C263C6FC047E}
 		{794B5A49-2FC3-4594-B50F-6B4C34F4B10A} = {755FC084-E002-4077-A6BC-034E2E241C36}
+		{02BB5143-6B67-4CE4-8E89-810D51B61958} = {C18F7C68-3013-4BDB-941F-C263C6FC047E}
+		{84C8CC13-FCE8-484A-974B-24759C945B30} = {02BB5143-6B67-4CE4-8E89-810D51B61958}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6770E066-08C7-4BE2-B15A-FBF8ABA0EE5E}

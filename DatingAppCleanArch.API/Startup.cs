@@ -2,10 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using DatingAppCleanArch.Application.Interfaces;
+using DatingAppCleanArch.Application.Profiles;
+using DatingAppCleanArch.Application.Services;
+using DatingAppCleanArch.Domain.Interfaces;
+using DatingAppCleanArch.Ioc;
+using DatingAppCleanArch.Persistence;
+using DatingAppCleanArch.Persistence.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +35,19 @@ namespace DatingAppCleanArch.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<DatingAppContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            RegisterServices(services);
+
+            //var mappingConfig = new MapperConfiguration(mc =>
+            //{
+            //    mc.AddProfile(new UserProfile());
+            //});
+
+            //services.AddAutoMapper(typeof(Startup));
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +68,10 @@ namespace DatingAppCleanArch.API
             {
                 endpoints.MapControllers();
             });
+        }
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterService(services);
         }
     }
 }
