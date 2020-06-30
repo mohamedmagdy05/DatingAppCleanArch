@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DatingAppCleanArch.API.Controllers.V1_0
 {
-    //old version s
+    // older version
     [ApiVersion("1.0")]
     //[Route("api/v{version:apiVersion}/[controller]")]
     [Route("api/[controller]")]
