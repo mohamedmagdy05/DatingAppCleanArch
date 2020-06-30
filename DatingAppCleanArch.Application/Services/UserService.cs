@@ -1,4 +1,5 @@
-﻿using DatingAppCleanArch.Application.Interfaces;
+﻿using DatingAppCleanArch.Application.Dtos;
+using DatingAppCleanArch.Application.Interfaces;
 using DatingAppCleanArch.Domain.Entities;
 using DatingAppCleanArch.Domain.Interfaces;
 using System;
@@ -17,31 +18,39 @@ namespace DatingAppCleanArch.Application.Services
         {
             _ctx = context;
         }
-        public Task<User> Add(User entity)
+
+        public async Task<UserModel> AddUser(UserModel UserData)
         {
-            return _ctx.Add(entity);
+            var user = new User() { 
+            FristName = UserData.FristName,
+            LastName = UserData.LastName,
+            Age = UserData.Age,
+            Url = UserData.Url,
+            GroupId = UserData.GroupId
+            };
+
+            var Data = await _ctx.Add(user);
+           return new UserModel() { Id = Data.Id, FristName = Data.FristName };
         }
 
-        public Task<User> Delete(int id)
+        public async Task<IEnumerable<UserModel>> GetAllUsers()
         {
-            throw new NotImplementedException();
+            var Data = await _ctx.GetAllusers();
+            
+            var Result = Data.Select(u => new UserModel
+            {
+               Id  = u.Id,
+               FristName = u.FristName,
+               LastName = u.LastName,
+               Age = u.Age,
+               GroupId = u.GroupId,
+               
+            });
+
+
+            return Result;
         }
 
-        public Task<User> Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-   
-
-        public Task<User> Update(User entity)
-        {
-            throw new NotImplementedException();
-        }
-
-       IEnumerable<User> IBaseRepository<User>.GetAll()
-        {
-            return _ctx.GetAll();
-        }
+        
     }
 }

@@ -41,6 +41,10 @@ namespace DatingAppCleanArch.Persistence.Repository
             return entity;
         }
 
+        public  async Task<List<T>> GetAll()
+        {
+            return await _ctx.Set<T>().ToListAsync();
+        }
 
         public async System.Threading.Tasks.Task<T> Update(T entity)
         {
@@ -49,9 +53,9 @@ namespace DatingAppCleanArch.Persistence.Repository
             return entity;
         }
 
-       IEnumerable<T> IBaseRepository<T>.GetAll()
-        {
-            return  _ctx.Set<T>().AsEnumerable();
-        }
+       //IEnumerable<T> IBaseRepository<T>.GetAll()
+       // {
+       //     return  _ctx.Set<T>().AsEnumerable();
+       // }
     }
 }

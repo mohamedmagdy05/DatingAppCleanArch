@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DatingAppCleanArch.Domain.Entities
 {
@@ -21,6 +22,7 @@ namespace DatingAppCleanArch.Domain.Entities
         public string Url { get; set; }
 
         public int GroupId { get; set; }
+        [JsonIgnore]
         public Group Group { get; set; }
     }
 }
