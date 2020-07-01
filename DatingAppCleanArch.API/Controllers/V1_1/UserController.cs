@@ -18,12 +18,11 @@ namespace DatingAppCleanArch.API.Controllers.V1_1
     public class UserController : ControllerBase
     {
         private IUserService _ctx;
-        private readonly IMapper _mapper;
 
-        public UserController(IUserService ctx, IMapper mapper)
+
+        public UserController(IUserService ctx)
         {
             _ctx = ctx;
-            _mapper = mapper;
         }
         [HttpGet]
         [MapToApiVersion("1.1")]
@@ -55,9 +54,10 @@ namespace DatingAppCleanArch.API.Controllers.V1_1
             try
             {
                 var Data = await _ctx.AddUser(user);
-                var result = new UserModel() { Id = Data.Id, FristName = Data.FristName };
-                //var result = _mapper.Map<UserModel>(Data);
-                return Ok(result);
+              
+
+
+                return Ok(Data);
             }
             catch(Exception ex)
             {

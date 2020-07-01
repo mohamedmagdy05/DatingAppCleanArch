@@ -4,10 +4,13 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build  
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-
 COPY ["DatingAppCleanArch.API/DatingAppCleanArch.API.csproj", "DatingAppCleanArch.API/"]
+COPY ["DatingAppCleanArch.Ioc/DatingAppCleanArch.Ioc.csproj", "DatingAppCleanArch.Ioc/"]
+COPY ["DatingAppCleanArch.Persistence/DatingAppCleanArch.Persistence.csproj", "DatingAppCleanArch.Persistence/"]
+COPY ["DatingAppCleanArch.Domain/DatingAppCleanArch.Domain.csproj", "DatingAppCleanArch.Domain/"]
+COPY ["DatingAppCleanArch.Application/DatingAppCleanArch.Application.csproj", "DatingAppCleanArch.Application/"]
 RUN dotnet restore "DatingAppCleanArch.API/DatingAppCleanArch.API.csproj"
 COPY . .
 WORKDIR "/src/DatingAppCleanArch.API"

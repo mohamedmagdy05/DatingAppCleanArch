@@ -12,6 +12,9 @@ using DatingAppCleanArch.Domain.Interfaces;
 using DatingAppCleanArch.Ioc;
 using DatingAppCleanArch.Persistence;
 using DatingAppCleanArch.Persistence.Repository;
+using Elastic.Apm.AspNetCore;
+using Elastic.Apm.DiagnosticSource;
+using Elastic.Apm.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -45,10 +48,7 @@ namespace DatingAppCleanArch.API
 
             RegisterServices(services);
 
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new UserProfile());
-            });
+        
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -76,8 +76,7 @@ namespace DatingAppCleanArch.API
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
-
+       
             app.UseRouting();
 
             app.UseAuthorization();

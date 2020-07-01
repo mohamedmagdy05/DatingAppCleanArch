@@ -20,12 +20,11 @@ namespace DatingAppCleanArch.API.Controllers.V1_0
     public class UserController : ControllerBase
     {
         private IUserService _ctx;
-        //private readonly IMapper _mapper;
 
         public UserController(IUserService ctx )
         {
             _ctx = ctx;
-            //_mapper = mapper;
+         
         }
 
         [HttpGet]
@@ -36,6 +35,7 @@ namespace DatingAppCleanArch.API.Controllers.V1_0
             {
 
                 var users = await _ctx.GetAllUsers();
+                //var userDtos = _mapper.Map<List<UserModel>>(users);
                 return Ok (users);
             }
             catch(Exception ex)
